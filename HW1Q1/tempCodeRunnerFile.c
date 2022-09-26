@@ -1,1 +1,0 @@
-SortQueue(&queue, N);
