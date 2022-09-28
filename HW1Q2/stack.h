@@ -1,9 +1,10 @@
-#define MAX_STACK 100
+#define MAX_STACK 1000
 
 typedef enum { false, true } bool;
 typedef int Data;
 typedef struct {
-Data items[MAX_STACK]; int top;
+  Data items[MAX_STACK]; 
+  int top;
 } Stack;
 
 // Make stack empty.
