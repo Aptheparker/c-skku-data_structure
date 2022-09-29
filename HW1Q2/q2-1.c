@@ -8,13 +8,13 @@ bool IsMountBalanced(char* exp, int len, int* total_height);
 
 //main function
 int main() {
-  char str[1000];
+  char mountain[1000];
   int total_height=0;
   printf("Your input: ");
   //get the input
-  scanf("%s",str);
+  scanf("%s",mountain);
   //check
-  bool check=IsMountBalanced(str,strlen(str),&total_height);
+  bool check=IsMountBalanced(mountain,strlen(mountain),&total_height);
   if(check==false){ //if not balanced, print 0
     printf("0");
   }
@@ -38,7 +38,7 @@ bool IsMountBalanced(char* exp, int len, int* total_height){
       }
     }
     else if(exp[i]=='\\'){
-      if(IsEmpty(&stack)){
+      if(IsEmpty(&stack)){ //if nothing to be popped, return false.
         return false;
       }
       else{
@@ -47,10 +47,10 @@ bool IsMountBalanced(char* exp, int len, int* total_height){
       }
     }
   }
-  if(IsEmpty(&stack)){
+  if(IsEmpty(&stack)){ //if there is nothing in the stack. (all popped)
     return true;
   }
-  else{
+  else{ //if remained.
     return false;
   }
 }
